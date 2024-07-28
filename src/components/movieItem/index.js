@@ -25,7 +25,7 @@ export default function MovieItem({ movieItemData }) {
         <img
           src={posterPath}
           alt="Movie Poster"
-          className="w-full h-full object-cover  transition-transform duration-150 ease-in-out group-hover:scale-105"
+          className="w-full h-full object-cover  transition-transform duration-200 ease-in-out lg:group-hover:scale-110"
         />
       </div>
       <div>
