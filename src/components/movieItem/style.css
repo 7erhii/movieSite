@@ -1,0 +1,14 @@
+/* 
+
+.item__image {
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.item__image img {
+  transition: transform 0.16s ease-in-out;
+}
+
+.item:hover .item__image img {
+  transform: scale(1.05);
+} */

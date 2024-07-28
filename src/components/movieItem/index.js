@@ -1,6 +1,8 @@
 import React from "react";
 import posterImage from "../../assets/images/posterImage.png";
 
+import "./style.css";
+
 export default function MovieItem({ movieItemData }) {
   const posterPath = movieItemData.backdrop_path
     ? `https://image.tmdb.org/t/p/w440_and_h660_face${movieItemData.backdrop_path}`
@@ -13,17 +15,17 @@ export default function MovieItem({ movieItemData }) {
       title = title.substring(0, 15) + "...";
     }
   } else {
-    if (title.length > 24) {
+    if (title.length > 22) {
       title = title.substring(0, 19) + "...";
     }
   }
   return (
-    <div className="lg:w-[20%] w-[33%] p-2 hover:scale-105 transition-transform duration-300">
-      <div>
+    <div className="lg:w-[20%] w-[33%] p-2 cursor-pointer group">
+      <div className="overflow-hidden rounded-t-lg">
         <img
           src={posterPath}
           alt="Movie Poster"
-          className="w-full h-full object-cover rounded-t-lg"
+          className="w-full h-full object-cover  transition-transform duration-150 ease-in-out group-hover:scale-105"
         />
       </div>
       <div>
