@@ -19,8 +19,8 @@ export default function MainMovieScreen() {
       <div className="flex w-full mx-auto justify-center py-10">
         <SearchInput />
       </div>
-      <div className="flex flex-col md:flex-row w-full gap-3 max-w-[965px] mx-auto px-5">
-        {moviesPopularData.slice(0, 5).map((item) => (
+      <div className="flex w-full max-w-[965px] mx-auto px-5 flex-wrap justify-center">
+        {moviesPopularData.slice(0, 20).map((item) => (
           <MovieItem key={item.id} movieItemData={item} />
         ))}
       </div>

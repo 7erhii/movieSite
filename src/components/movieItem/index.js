@@ -12,7 +12,7 @@ export default function MovieItem({ movieItemData }) {
     title = title.substring(0, 19) + "...";
   }
   return (
-    <div>
+    <div className=" lg:w-[20%] w-[33%] p-2" >
       <div>
         <img
           src={posterPath}
@@ -24,6 +24,7 @@ export default function MovieItem({ movieItemData }) {
         <p className="text-blue-50 text-base font-light">{title}</p>
       </div>
     </div>
+
     // <div
     //   style={{
     //     width: "100%",
