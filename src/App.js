@@ -6,7 +6,7 @@ import "./global.css";
 
 // Components
 import RootLayout from "./layout";
-import MainScreen from "./components/mainScreen";
+import MainMovieScreen from "./components/mainMovieScreen";
 
 function App() {
   useEffect(() => {
@@ -42,10 +42,10 @@ function App() {
   const isDarkMode = theme === "dark";
 
   return (
-    <div className={isDarkMode ? "text-white" : "text-black"}>
+    <div className={isDarkMode ? "text-white" : "text-black"} style={{minHeight: "100vh"}}>
       <RootLayout>
         {/* <h1 dark>Welcome to React Movie App</h1> */}
-        <MainScreen />
+        <MainMovieScreen />
       </RootLayout>
     </div>
   );
