@@ -42,7 +42,10 @@ function App() {
   const isDarkMode = theme === "dark";
 
   return (
-    <div className={isDarkMode ? "text-white" : "text-black"} style={{minHeight: "100vh"}}>
+    <div
+      className={isDarkMode ? "text-white" : "text-black"}
+      style={{ minHeight: "100vh" }}
+    >
       <RootLayout>
         {/* <h1 dark>Welcome to React Movie App</h1> */}
         <MainMovieScreen />
