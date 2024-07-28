@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+// Core
+import { useEffect } from "react";
+
+// Style
+import "./global.css";
+
+// Components
+import RootLayout from "./layout";
+import MainScreen from "./components/mainScreen";
 
 function App() {
+  useEffect(() => {
+    const applyTheme = (theme) => {
+      document.body.classList.remove("dark", "light");
+      document.body.classList.add(theme);
+      localStorage.setItem("react-movie-theme", theme);
+    };
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleThemeChange = (e) => {
+      const newTheme = e.matches ? "dark" : "light";
+      applyTheme(newTheme);
+    };
+
+    mediaQuery.addEventListener("change", handleThemeChange);
+
+    const savedTheme =
+      localStorage.getItem("react-movie-theme") ||
+      (mediaQuery.matches ? "dark" : "light");
+    applyTheme(savedTheme);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleThemeChange);
+    };
+  }, []);
+
+  const theme =
+    localStorage.getItem("react-movie-theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+  const isDarkMode = theme === "dark";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={isDarkMode ? "text-white" : "text-black"}>
+      <RootLayout>
+        {/* <h1 dark>Welcome to React Movie App</h1> */}
+        <MainScreen />
+      </RootLayout>
     </div>
   );
 }

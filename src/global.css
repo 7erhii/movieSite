@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light-bg: #ffffff;
+  --light-secondary-bg: #e9f0fa;
+  --light-accent: #5c7aea;
+  --light-font: #213e3c;
+  --light-extra-accent: #ffa500;
+
+  --dark-bg: #121212;
+  --dark-secondary-bg: #213e3c;
+  --dark-accent: #90e0ef;
+  --dark-font: #e9f0fa;
+  --dark-extra-accent: #ff6347;
+}
+
+.light {
+  --bg: var(--light-bg);
+  --secondary-bg: var(--light-secondary-bg);
+  --accent: var(--light-accent);
+  --font-color: var(--light-font);
+  --extra-accent: var(--light-extra-accent);
+}
+
+.dark {
+  --bg: var(--dark-bg);
+  --secondary-bg: var(--dark-secondary-bg);
+  --accent: var(--dark-accent);
+  --font-color: var(--dark-font);
+  --extra-accent: var(--dark-extra-accent);
+}
+
+body {
+  background: var(--bg);
+}
