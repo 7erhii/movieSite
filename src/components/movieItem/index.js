@@ -8,11 +8,17 @@ export default function MovieItem({ movieItemData }) {
 
   let title = movieItemData.original_title;
 
-  if (title.length > 24) {
-    title = title.substring(0, 19) + "...";
+  if (window.innerWidth < 600) {
+    if (title.length > 18) {
+      title = title.substring(0, 15) + "...";
+    }
+  } else {
+    if (title.length > 24) {
+      title = title.substring(0, 19) + "...";
+    }
   }
   return (
-    <div className=" lg:w-[20%] w-[33%] p-2" >
+    <div className="lg:w-[20%] w-[33%] p-2 hover:scale-105 transition-transform duration-300">
       <div>
         <img
           src={posterPath}
@@ -21,7 +27,7 @@ export default function MovieItem({ movieItemData }) {
         />
       </div>
       <div>
-        <p className="text-blue-50 text-base font-light">{title}</p>
+        <p className="text-blue-50 text-xs lg:text-base font-light">{title}</p>
       </div>
     </div>
 
